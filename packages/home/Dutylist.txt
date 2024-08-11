@@ -1,0 +1,13 @@
+pwd
+  666888
+npm i vite-plugin-vue-setup-extend -D
+
+<input type="text" v-model='mytext' />
+    same as 
+<input type='text' :value='mytext' @input="'mytext' = $event.target.value" />
+
+v-model x2 56
+  pwd and repwd
+
+
+CN and EN?

@@ -1,10 +1,10 @@
-import { defineConfig, loadEnv } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import VueSetup from 'vite-plugin-vue-setup-extend';
+import { defineConfig, loadEnv } from "vite";
+import vue from "@vitejs/plugin-vue";
+import VueSetup from "vite-plugin-vue-setup-extend";
 // import { VITE_API_URL } from '@/utils/config.ts';
 
-import { resolve } from 'path';
-import process from 'process';
+import { resolve } from "path";
+import process from "process";
 
 export default defineConfig(({ mode, command }) => {
   const env: Record<string, string> = loadEnv(mode, process.cwd());
@@ -15,12 +15,12 @@ export default defineConfig(({ mode, command }) => {
       port: Number(VITE_DEV_SERVER_PORT),
       cors: true,
       proxy: {
-        '/api': {
+        "/api": {
           target: VITE_API_URL,
           changeOrigin: true,
-          rewrite: (path: string) => path.replace(/^\/api/, ''),
+          rewrite: (path: string) => path.replace(/^\/api/, ""),
         },
-        '/websocket/ws': {
+        "/websocket/ws": {
           target: `ws://localhost:${VITE_API_WEBSOCKET}`,
           ws: true,
           secure: false,
@@ -32,7 +32,7 @@ export default defineConfig(({ mode, command }) => {
     plugins: [vue(), VueSetup()],
     resolve: {
       alias: {
-        '@': resolve(__dirname, './src'),
+        "@": resolve(__dirname, "./src"),
       },
     },
     // css: {

@@ -8,13 +8,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, watch } from 'vue';
-import { useRouter } from 'vue-router';
-import { useAccountStore } from '@/store/account';
-import useOverlay from '@/utils/useOverlay';
-import useLogin from '@/utils/useLogin';
-import useRegister from '@/utils/useRegister';
-import useSuccess from '@/utils/useSuccess';
+import { onMounted, onUnmounted, watch } from "vue";
+import { useRouter } from "vue-router";
+import { useAccountStore } from "@/store/account";
+import useOverlay from "@/utils/useOverlay";
+import useLogin from "../../../test/useLogin";
+import useRegister from "@/utils/useRegister";
+import useSuccess from "@/utils/useSuccess";
 
 const { phoneLogin, accountLogin } = useLogin();
 const { phoneRegister, accountRegister } = useRegister();
@@ -25,28 +25,28 @@ const { ToggleOverlay } = useOverlay();
 const accountStore = useAccountStore();
 
 const props = defineProps([
-  'dialogVisible',
-  'phoneNum',
-  'account',
-  'password',
-  'actionType',
+  "dialogVisible",
+  "phoneNum",
+  "account",
+  "password",
+  "actionType",
 ]);
-const emit = defineEmits(['close', 'isDialogVisible']);
+const emit = defineEmits(["close", "isDialogVisible"]);
 
 const processPhoneLogin = async (data: any) => {
   const suessPhoneLogin = await phoneLogin(
     props.phoneNum as string,
     data.token
   );
-  emit('isDialogVisible', false);
+  emit("isDialogVisible", false);
 
   if (suessPhoneLogin === 200) {
     accountStore.account = props.phoneNum as string;
-    displaySuccess('suessPhoneLogin', 'suessPhoneLogin');
+    displaySuccess("suessPhoneLogin", "suessPhoneLogin");
   } else {
-    alert('登录失败');
-    displaySuccess('suessPhoneLogin', 'suessPhoneLogin');
-    router.push('/PhoneLoginView');
+    alert("登录失败");
+    displaySuccess("suessPhoneLogin", "suessPhoneLogin");
+    router.push("/PhoneLoginView");
   }
 };
 
@@ -55,15 +55,15 @@ const processPhoneRegister = async (data: any) => {
     props.phoneNum as string,
     data.token
   );
-  emit('isDialogVisible', false);
+  emit("isDialogVisible", false);
 
   if (suessPhoneRegister === 200) {
-    displaySuccess('suessPhoneRegister', 'suessPhoneRegister');
+    displaySuccess("suessPhoneRegister", "suessPhoneRegister");
   } else {
-    alert('注册失败');
-    displaySuccess('suessPhoneRegister', 'suessPhoneRegister');
+    alert("注册失败");
+    displaySuccess("suessPhoneRegister", "suessPhoneRegister");
 
-    router.push('/phoneRegistrationView');
+    router.push("/phoneRegistrationView");
   }
 };
 
@@ -74,16 +74,16 @@ const processAccountLogin = async (data: any) => {
     data.token
   );
 
-  emit('isDialogVisible', false);
+  emit("isDialogVisible", false);
 
   if (suessAccountLogin === 200) {
     accountStore.account = props.account as string;
-    displaySuccess('suessAccountLogin', 'suessAccountLogin');
+    displaySuccess("suessAccountLogin", "suessAccountLogin");
   } else {
-    alert('登录失败');
-    displaySuccess('suessPhoneRegister', 'suessPhoneRegister');
+    alert("登录失败");
+    displaySuccess("suessPhoneRegister", "suessPhoneRegister");
 
-    router.push('/accountLoginView');
+    router.push("/accountLoginView");
   }
 };
 
@@ -94,34 +94,34 @@ const processAccountRegister = async (data: any) => {
     data.token
   );
 
-  emit('isDialogVisible', false);
+  emit("isDialogVisible", false);
 
   if (suessAccountRegister === 200) {
-    displaySuccess('suessAccountRegister', 'suessAccountRegister');
+    displaySuccess("suessAccountRegister", "suessAccountRegister");
   } else {
-    alert('注册失败');
-    displaySuccess('suessPhoneRegister', 'suessPhoneRegister');
+    alert("注册失败");
+    displaySuccess("suessPhoneRegister", "suessPhoneRegister");
 
-    router.push('/accountRegistrationView');
+    router.push("/accountRegistrationView");
   }
 };
 
 const onSuccessCallback = async (event: any) => {
   const data = event.data;
 
-  if (data.event === 'close') {
-    console.log('close');
+  if (data.event === "close") {
+    console.log("close");
     window.location.reload();
-    emit('close');
+    emit("close");
   }
 
-  if (data.status === 'success') {
+  if (data.status === "success") {
     console.log(props.actionType);
-    if (props.actionType === 'phoneLogin') {
+    if (props.actionType === "phoneLogin") {
       processPhoneLogin(data);
-    } else if (props.actionType === 'phoneRegister') {
+    } else if (props.actionType === "phoneRegister") {
       processPhoneRegister(data);
-    } else if (props.actionType === 'accountLogin') {
+    } else if (props.actionType === "accountLogin") {
       processAccountLogin(data);
     } else {
       processAccountRegister(data);
@@ -130,12 +130,12 @@ const onSuccessCallback = async (event: any) => {
 };
 
 onMounted(() => {
-  console.log('Mounted Captcha');
-  window.addEventListener('message', onSuccessCallback);
+  console.log("Mounted Captcha");
+  window.addEventListener("message", onSuccessCallback);
 });
 
 onUnmounted(() => {
-  window.removeEventListener('message', onSuccessCallback);
+  window.removeEventListener("message", onSuccessCallback);
 });
 
 watch(

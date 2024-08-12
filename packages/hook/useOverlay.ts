@@ -11,3 +11,7 @@ export default () => {
     ToggleOverlay,
   };
 };
+
+link 
+soft 
+hard

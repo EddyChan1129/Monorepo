@@ -14,11 +14,11 @@
     "packages/store/**/*.vue",
     "packages/store/**/**/*.ts",
     "packages/store/**/**/*.vue",
-    "packages/utils/**/*",
-    "packages/utils/**/*.ts",
-    "packages/utils/**/*.vue",
-    "packages/utils/**/**/*.ts",
-    "packages/utils/**/**/*.vue"
+    "packages/hook/**/*",
+    "packages/hook/**/*.ts",
+    "packages/hook/**/*.vue",
+    "packages/hook/**/**/*.ts",
+    "packages/hook/**/**/*.vue"
   ],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {

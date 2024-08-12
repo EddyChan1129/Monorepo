@@ -1,5 +1,7 @@
  <template>
   <div class="account-register">
+    
+    
     <div class="register-tabs">
       <RouterLink
         class="select-account"

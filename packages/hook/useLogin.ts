@@ -102,6 +102,7 @@ export default () => {
         }
       );
 
+      
       const data = await res.json();
       console.log('phone, token: string', phone, token);
       console.log('Hook phone login data.', data.code);

@@ -2,7 +2,7 @@
   <!-- v-show="isSuccess"  -->
   <div class="success" v-bind="$attrs" v-show="isSuccess && open">
     <div class="success_content">
-      <img src="../assets/success/success.png" alt="succesful image" />
+      <img src="/images/success/success.png" alt="succesful image" />
     </div>
     <div class="success_content">{{ title }}</div>
     <hr />

@@ -9,7 +9,16 @@
     "components/**/*.vue",
     "components/**/**/*.vue",
     "components/**/**/*.ts",
-    "store/**/*"
+    "store/**/*",
+    "store/**/*.ts",
+    "store/**/*.vue",
+    "store/**/**/*.ts",
+    "store/**/**/*.vue",
+    "utils/**/*",
+    "utils/**/*.ts",
+    "utils/**/*.vue",
+    "utils/**/**/*.ts",
+    "utils/**/**/*.vue"
   ],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {

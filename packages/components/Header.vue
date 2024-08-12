@@ -3,7 +3,7 @@
     <div class="welcome-container">
       <div class="weclome-upper">
         <img
-          src="/assets/welcome/klogo.png"
+          src="/images/welcome/klogo.png"
           class="small-logo"
           alt="small-logo"
         />

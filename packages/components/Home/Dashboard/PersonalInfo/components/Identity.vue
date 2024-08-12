@@ -7,7 +7,7 @@
       </div>
       <div class="backNav-container">
         <span>未绑定</span>
-        <img src="/assets/navbar/backNav.png" alt="backNav" />
+        <img src="/images/navbar/backNav.png" alt="backNav" />
       </div>
     </div>
   </div>
@@ -20,17 +20,17 @@ const router = useRouter();
 const navbar = reactive([
   {
     nav: '身份绑定',
-    img: 'src/assets/navbar/personal-info.png',
+    img: '/images/navbar/personal-info.png',
     path: '/personalIdentity',
   },
   {
     nav: '手机绑定',
-    img: 'src/assets/navbar/my-wallet.png',
+    img: '/images/navbar/my-wallet.png',
     path: '/phoneIdentity',
   },
   {
     nav: '邮箱绑定',
-    img: 'src/assets/navbar/invest-record.png',
+    img: '/images/navbar/invest-record.png',
     path: '/emailIdentity',
   },
 ]);

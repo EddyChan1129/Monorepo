@@ -1,7 +1,7 @@
 <template>
   <div id="safety">
     <div class="safetyImage">
-      <img src="/assets/home/safety.png" alt="" />
+      <img src="/images/home/safety.png" alt="" />
     </div>
     <div class="safetyData">
       <h4>账号安全指数 10%</h4>

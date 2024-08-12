@@ -1,7 +1,7 @@
 <template>
   <div class="help-center">
     <div class="help-left">
-      <img src="/assets/home/cartoon.png" alt="cartoon" />
+      <img src="/images/home/cartoon.png" alt="cartoon" />
       <div>
         <h4>帮助中心</h4>
         <span>全年无休 为您服务</span>

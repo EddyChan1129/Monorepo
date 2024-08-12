@@ -15,7 +15,7 @@
             <span>{{ languageItem.lang }}</span>
           </div>
           <img
-            src="/assets/language/tick.png"
+            src="/images/language/tick.png"
             alt="tick"
             v-show="languageItem.lang == language"
           />
@@ -32,7 +32,7 @@ import { useLanguageStore } from '@/store/language';
 const languageStore = useLanguageStore();
 
 const language = ref('简体中文');
-const image = ref('/assets/language/zn.png');
+const image = ref('/images/language/zn.png');
 const toggleLang = ref(false);
 const toggleLanguage = () => {
   toggleLang.value = !toggleLang.value;
@@ -41,13 +41,13 @@ const toggleLanguage = () => {
 const selectLang = (lang: string) => {
   language.value = lang;
   if (lang === '简体中文') {
-    image.value = '/assets/language/zn.png';
+    image.value = '/images/language/zn.png';
     languageStore.language = '简体中文';
   } else if (lang === 'English') {
-    image.value = '/assets/language/en.png';
+    image.value = '/images/language/en.png';
     languageStore.language = 'English';
   } else {
-    image.value = '/assets/language/cn.png';
+    image.value = '/images/language/cn.png';
     languageStore.language = '繁體中文';
   }
 };

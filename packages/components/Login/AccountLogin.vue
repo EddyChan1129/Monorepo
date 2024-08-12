@@ -15,13 +15,13 @@
         placeholder="请输入您的账号"
         v-model="account"
         required
-        logo="/src/assets/input/account-logo.png"
+        logo="/images/input/account-logo.png"
       />
 
       <PasswordInput
         v-model="password"
         placeholder="请设置账号密码"
-        logo="/src/assets/input/password-logo.png"
+        logo="/images/input/password-logo.png"
         required
       />
 

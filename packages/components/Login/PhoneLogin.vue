@@ -9,19 +9,14 @@
     />
 
     <form @submit.prevent="login">
-      <PhoneInput
-        v-model="phoneNum"
-        placeholder="请输入您的手机号"
-        required
-        logo="/src/assets/input/phone-logo.png"
-      />
+      <PhoneInput v-model="phoneNum" placeholder="请输入您的手机号" required />
 
       <SimpleInput
         type="text"
         placeholder="请输入验证码"
         v-model="inviteCode"
         required
-        logo="/src/assets/input/validate-logo.png"
+        logo="/images/input/validate-logo.png"
       />
       <button type="submit" class="login-button">登录</button>
     </form>
@@ -40,8 +35,8 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import Captcha from '@/components/Captcha.vue';
-import SimpleInput from '../FormInput/SimpleInput.vue';
-import PhoneInput from '../FormInput/PhoneInput.vue';
+import SimpleInput from '@/components/FormInput/SimpleInput.vue';
+import PhoneInput from '@/components/FormInput/PhoneInput.vue';
 const dialogVisible = ref(false);
 const phoneNum = ref('');
 const inviteCode = ref('');

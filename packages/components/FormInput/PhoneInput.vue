@@ -1,9 +1,9 @@
 <template>
   <div class="form-input">
-    <img :src="logo" />
+    <img src="/images/input/phone-logo.png" />
     <div class="phone-location" @click="displayCountry">
       <span>{{ phoneCode }}</span>
-      <img src="/assets/input/polygonDown-logo.png" alt="uplogo" />
+      <img src="/images/input/polygonDown-logo.png" alt="uplogo" />
     </div>
     <input
       type="text"
@@ -29,13 +29,7 @@
 
 <script setup>
 import { ref } from 'vue';
-const props = defineProps([
-  'modelValue',
-  'type',
-  'placeholder',
-  'required',
-  'logo',
-]);
+const props = defineProps(['modelValue', 'type', 'placeholder', 'required']);
 
 const emit = defineEmits(['update:modelValue']);
 const phoneCode = ref('+86');

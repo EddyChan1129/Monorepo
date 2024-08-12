@@ -3,7 +3,7 @@
     <div class="my-wallet">我的钱包</div>
     <div class="money-container">
       <div class="money">
-        <img src="/assets/home/money.png" alt="money" />
+        <img src="/images/home/money.png" alt="money" />
         <h2>0.00</h2>
       </div>
       <div class="money-action">

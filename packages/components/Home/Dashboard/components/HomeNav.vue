@@ -6,7 +6,7 @@
     </div>
     <div class="backNav-container">
       <div v-show="info.nav === '消息中心'" class="redpoint"></div>
-      <img src="/assets/navbar/backNav.png" alt="backNav" />
+      <img src="/images/navbar/backNav.png" alt="backNav" />
     </div>
   </div>
 </template>
@@ -25,52 +25,52 @@ const go = (path: string) => {
 const navbar = reactive([
   {
     nav: '个人资讯',
-    img: '/assets/navbar/personal-info.png',
+    img: '/images/navbar/personal-info.png',
     path: '/personalInfo',
   },
   {
     nav: '我的钱包',
-    img: '/assets/navbar/my-wallet.png',
+    img: '/images/navbar/my-wallet.png',
   },
   {
     nav: '投注记录',
-    img: '/assets/navbar/invest-record.png',
+    img: '/images/navbar/invest-record.png',
   },
   {
     nav: '资金明细',
-    img: '/assets/navbar/invest-detail.png',
+    img: '/images/navbar/invest-detail.png',
   },
   {
     nav: '报表查询',
-    img: '/assets/navbar/query.png',
+    img: '/images/navbar/query.png',
   },
   {
     nav: '消息中心',
-    img: '/assets/navbar/infocenter.png',
+    img: '/images/navbar/infocenter.png',
   },
   {
     nav: '优惠活动',
-    img: '/assets/navbar/promotion.png',
+    img: '/images/navbar/promotion.png',
   },
   {
     nav: '我的收藏',
-    img: '/assets/navbar/my-assest.png',
+    img: '/images/navbar/my-assest.png',
   },
   {
     nav: 'APP下载',
-    img: '/assets/navbar/download.png',
+    img: '/images/navbar/download.png',
   },
   {
     nav: '代理申请',
-    img: '/assets/navbar/people.png',
+    img: '/images/navbar/people.png',
   },
   {
     nav: '意见反馈',
-    img: '/assets/navbar/suggestion.png',
+    img: '/images/navbar/suggestion.png',
   },
   {
     nav: '帮助中心',
-    img: '/assets/navbar/helpcenter.png',
+    img: '/images/navbar/helpcenter.png',
   },
 ]);
 </script>

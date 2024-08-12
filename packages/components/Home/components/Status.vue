@@ -1,7 +1,7 @@
 <template>
   <div id="statue">
     <div class="status-left">
-      <img src="/assets/home/index/home-logo.svg" alt="logo" />
+      <img src="/images/home/index/home-logo.svg" alt="logo" />
     </div>
     <div class="status-right">
       <div v-if="beforeLogin && !isLogin" class="login-before">
@@ -13,18 +13,18 @@
 
       <div v-if="tryGameMode && !isLogin" class="action-after">
         <div class="moneny">
-          <img src="/assets/home/index/money.svg" alt="" />
+          <img src="/images/home/index/money.svg" alt="" />
           5000.00
         </div>
-        <img src="/assets/home/index/status-try.svg" alt="" />
+        <img src="/images/home/index/status-try.svg" alt="" />
       </div>
 
       <div v-if="isLogin" class="action-after">
         <div class="moneny">
-          <img src="/assets/home/index/money.svg" alt="" />
+          <img src="/images/home/index/money.svg" alt="" />
           5000.00
         </div>
-        <img src="/assets/home/index/status-login.svg" alt="" />
+        <img src="/images/home/index/status-login.svg" alt="" />
       </div>
       <Language />
     </div>

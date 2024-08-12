@@ -1,36 +1,36 @@
 <template>
   <div id="game-content">
     <div class="top-section">
-      <img src="assets/home/game/gameTopContent.svg" alt="game content svg" />
+      <img src="images/home/game/gameTopContent.svg" alt="game content svg" />
     </div>
 
     <div class="notice">
-      <img src="/assets/home/speaker.svg" alt="" />
+      <img src="/images/home/speaker.svg" alt="" />
       <p>
         尊敬的客户：当日总有效投注额满足活动要求，即可申请最高8,888元现金流水
       </p>
     </div>
 
     <div class="message">
-      <img src="/assets/home/rectangle/rec1.svg" alt="rectangle.logo" />
-      <img src="/assets/home/rectangle/rec2.svg" alt="rectangle.logo" />
-      <img src="/assets/home/rectangle/rec3.svg" alt="rectangle.logo" />
+      <img src="/images/home/rectangle/rec1.svg" alt="rectangle.logo" />
+      <img src="/images/home/rectangle/rec2.svg" alt="rectangle.logo" />
+      <img src="/images/home/rectangle/rec3.svg" alt="rectangle.logo" />
       <h3>赛道选择</h3>
-      <img src="/assets/home/rectangle/rec4.svg" alt="rectangle.logo" />
-      <img src="/assets/home/rectangle/rec5.svg" alt="rectangle.logo" />
-      <img src="/assets/home/rectangle/rec6.svg" alt="rectangle.logo" />
+      <img src="/images/home/rectangle/rec4.svg" alt="rectangle.logo" />
+      <img src="/images/home/rectangle/rec5.svg" alt="rectangle.logo" />
+      <img src="/images/home/rectangle/rec6.svg" alt="rectangle.logo" />
     </div>
     <div class="game-track" v-for="(item, index) in 7" :key="index">
       <img
         :src="
           index % 2 === 0
-            ? '/assets/home/game/gameTrack-1.svg'
-            : '/assets/home/game/gameTrack-2.svg'
+            ? '/images/home/game/gameTrack-1.svg'
+            : '/images/home/game/gameTrack-2.svg'
         "
         alt=""
       />
       <div class="game-right">
-        <img src="/assets/home/game/track.svg" alt="" />
+        <img src="/images/home/game/track.svg" alt="" />
         <div class="game-detail">
           <div>
             <p>LENGTH</p>
@@ -52,7 +52,7 @@
       </div>
       <div class="game-bottom">
         <div class="start-logo">
-          <img src="/assets/home/game/start.svg" alt="" />Track 01
+          <img src="/images/home/game/start.svg" alt="" />Track 01
         </div>
         <span class="ready">
           准备中

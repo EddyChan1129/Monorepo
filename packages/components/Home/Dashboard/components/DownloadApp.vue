@@ -2,7 +2,7 @@
   <section id="downloadApp" v-show="displayDownload">
     <div class="download-left">
       <div class="logo">
-        <img src="/assets/welcome/klogo.png" alt="" />
+        <img src="/images/welcome/klogo.png" alt="" />
       </div>
       <div class="appDesc">
         <h4>官方APP</h4>
@@ -13,7 +13,7 @@
       <div class="download-btn">下载APP</div>
       <img
         @click="displayDownload = !displayDownload"
-        src="/assets/home/remove.png"
+        src="/images/home/remove.png"
         alt="remove"
       />
     </div>

@@ -10,7 +10,7 @@
     type="text"
     placeholder="请输入您的账号"
     required
-    logo="/assets/findaccount/account-logo.png"
+    logo="/images/findaccount/account-logo.png"
   />
   <button
     @click="router.push('/verifyPhone')"

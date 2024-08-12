@@ -1,10 +1,7 @@
 <template>
   <div class="language-toggle" @click="toggleLanguage">
     <div class="selected-language">
-      <img
-        :src="'http://localhost:5173/src/' + image"
-        alt="Traditional Chinese"
-      />
+      <img :src="image" alt="Traditional Chinese" />
       <span>{{ language }}</span>
       <div class="toggled" v-show="toggleLang">
         <div
@@ -15,16 +12,11 @@
           :class="languageItem.lang == language ? 'isSelected' : ''"
         >
           <div>
-            <img
-              :src="'http://localhost:5173/src/' + languageItem.img"
-              alt="zn"
-              width="15"
-              height="15"
-            />
+            <img :src="languageItem.img" alt="zn" width="15" height="15" />
             <span>{{ languageItem.lang }}</span>
           </div>
           <img
-            src="localhost:5173/src/assets/language/tick.png"
+            src="/images/language/tick.png"
             alt="tick"
             v-show="languageItem.lang == language"
           />
@@ -41,7 +33,7 @@ import { useLanguageStore } from '@/store/language';
 const languageStore = useLanguageStore();
 
 const language = ref('简体中文');
-const image = ref('/assets/language/zn.png');
+const image = ref('images/language/zn.png');
 const toggleLang = ref(false);
 const toggleLanguage = () => {
   toggleLang.value = !toggleLang.value;
@@ -50,13 +42,13 @@ const toggleLanguage = () => {
 const selectLang = (lang: string) => {
   language.value = lang;
   if (lang === '简体中文') {
-    image.value = '/assets/language/zn.png';
+    image.value = 'images/language/zn.png';
     languageStore.language = '简体中文';
   } else if (lang === 'English') {
-    image.value = '/assets/language/en.png';
+    image.value = 'images/language/en.png';
     languageStore.language = 'English';
   } else {
-    image.value = '/assets/language/cn.png';
+    image.value = 'images/language/cn.png';
     languageStore.language = '繁體中文';
   }
 };

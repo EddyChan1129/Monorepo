@@ -9,18 +9,13 @@
     />
 
     <form @submit.prevent="register">
-      <PhoneInput
-        placeholder="请输入您的手机号"
-        v-model="phoneNum"
-        required
-        logo="/src/assets/input/phone-logo.png"
-      />
+      <PhoneInput placeholder="请输入您的手机号" v-model="phoneNum" required />
 
       <VerifyCodeInput
         placeholder="请输入验证码"
         v-model="verifyCode"
         required
-        logo="/src/assets/input/validate-logo.png"
+        logo="/images/input/validate-logo.png"
         inputFormat="verifyCode"
       />
 
@@ -29,7 +24,7 @@
         placeholder="请输入邀请码"
         v-model="inviteCode"
         required
-        logo="/src/assets/input/invite-logo.png"
+        logo="/images/input/invite-logo.png"
       />
 
       <AcceptAgreement />
@@ -43,9 +38,9 @@
 import { ref } from 'vue';
 import AcceptAgreement from '@/components/AcceptAgreement.vue';
 import Captcha from '@/components/Captcha.vue';
-import PhoneInput from '../FormInput/PhoneInput.vue';
-import VerifyCodeInput from '../FormInput/VerifyCodeInput.vue';
-import SimpleInput from '../FormInput/SimpleInput.vue';
+import PhoneInput from '@/components/FormInput/PhoneInput.vue';
+import VerifyCodeInput from '@/components/FormInput/VerifyCodeInput.vue';
+import SimpleInput from '@/components/FormInput/SimpleInput.vue';
 import useOverlay from '@/utils/useOverlay';
 
 const { ToggleOverlay } = useOverlay();
@@ -55,7 +50,6 @@ const inviteCode = ref('');
 const verifyCode = ref('');
 
 const register = async () => {
-  ToggleOverlay();
   dialogVisible.value = true;
 };
 

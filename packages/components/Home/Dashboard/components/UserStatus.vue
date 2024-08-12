@@ -11,7 +11,7 @@
   </div>
   <div v-else>
     <div class="user-info">
-      <img src="/assets/home/user-logo.png" alt="user-logo" />
+      <img src="/images/home/user-logo.png" alt="user-logo" />
       <span> {{ accountStore.account }}</span>
     </div>
   </div>

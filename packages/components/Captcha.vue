@@ -42,11 +42,9 @@ const processPhoneLogin = async (data: any) => {
 
   if (suessPhoneLogin === 200) {
     accountStore.account = props.phoneNum as string;
-    displaySuccess('suessPhoneLogin', 'suessPhoneLogin');
+    displaySuccess(router, '登录成功', '登录成功');
   } else {
     alert('登录失败');
-    displaySuccess('suessPhoneLogin', 'suessPhoneLogin');
-    router.push('/PhoneLoginView');
   }
 };
 
@@ -58,12 +56,9 @@ const processPhoneRegister = async (data: any) => {
   emit('isDialogVisible', false);
 
   if (suessPhoneRegister === 200) {
-    displaySuccess('suessPhoneRegister', 'suessPhoneRegister');
+    displaySuccess(router, '注册成功', '注册成功');
   } else {
     alert('注册失败');
-    displaySuccess('suessPhoneRegister', 'suessPhoneRegister');
-
-    router.push('/phoneRegistrationView');
   }
 };
 
@@ -78,12 +73,9 @@ const processAccountLogin = async (data: any) => {
 
   if (suessAccountLogin === 200) {
     accountStore.account = props.account as string;
-    displaySuccess('suessAccountLogin', 'suessAccountLogin');
+    displaySuccess(router, '登录成功', '登录成功');
   } else {
     alert('登录失败');
-    displaySuccess('suessPhoneRegister', 'suessPhoneRegister');
-
-    router.push('/accountLoginView');
   }
 };
 
@@ -97,12 +89,10 @@ const processAccountRegister = async (data: any) => {
   emit('isDialogVisible', false);
 
   if (suessAccountRegister === 200) {
-    displaySuccess('suessAccountRegister', 'suessAccountRegister');
+    displaySuccess(router, '注册成功', 'suessAccountRegister');
+    router.push('/');
   } else {
     alert('注册失败');
-    displaySuccess('suessPhoneRegister', 'suessPhoneRegister');
-
-    router.push('/accountRegistrationView');
   }
 };
 

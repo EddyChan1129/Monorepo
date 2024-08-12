@@ -6,15 +6,15 @@ export const useLanguageStore = defineStore('language', {
       languageList: [
         {
           lang: '简体中文',
-          img: 'assets/language/zn.png',
+          img: 'images/language/zn.png',
         },
         {
           lang: '繁体中文',
-          img: '/assets/language/cn.png',
+          img: '/images/language/cn.png',
         },
         {
           lang: 'English',
-          img: 'assets/language/en.png',
+          img: 'images/language/en.png',
         },
       ],
       language: '简体中文',

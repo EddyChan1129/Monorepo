@@ -25,7 +25,7 @@
       <SimpleInput
         placeholder="请输入邀请码"
         v-model="inviteCode"
-        logo="/src/assets/input/invite-logo.png"
+        logo="/images/input/invite-logo.png"
       />
 
       <AcceptAgreement />
@@ -44,9 +44,9 @@
 import { computed, ref } from 'vue';
 import AcceptAgreement from '@/components/AcceptAgreement.vue';
 import Captcha from '@/components/Captcha.vue';
-import VerifyAccountInput from '../FormInput/VerifyAccountInput.vue';
-import VerifyPassword from '../FormInput/VerifyPassword.vue';
-import SimpleInput from '../FormInput/SimpleInput.vue';
+import VerifyAccountInput from '@/components/FormInput/VerifyAccountInput.vue';
+import VerifyPassword from '@/components/FormInput/VerifyPassword.vue';
+import SimpleInput from '@/components/FormInput/SimpleInput.vue';
 
 const account = ref('');
 const password = ref('');

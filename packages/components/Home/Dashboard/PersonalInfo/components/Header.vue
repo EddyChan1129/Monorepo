@@ -3,7 +3,7 @@
     <h4>
       <slot>Default</slot>
     </h4>
-    <img src="/assets/findaccount/arrow.png" alt="arrow" @click="backprev" />
+    <img src="/images/findaccount/arrow.png" alt="arrow" @click="backprev" />
   </header>
 </template>
 <script setup lang="ts" name="Header">

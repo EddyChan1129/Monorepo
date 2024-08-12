@@ -28,32 +28,32 @@ import { reactive } from 'vue';
 const footer = reactive([
   {
     info: '首页',
-    img: '/assets/footer/home.png',
-    imgActive: '/assets/footer/active/home.png',
+    img: '/images/footer/home.png',
+    imgActive: '/images/footer/active/home.png',
     path: '/',
   },
   {
     info: '开奖',
-    img: '/assets/footer/lucky.png',
-    imgActive: '/assets/footer/active/lucky.png',
+    img: '/images/footer/lucky.png',
+    imgActive: '/images/footer/active/lucky.png',
     path: '/lucky',
   },
   {
     info: '游戏',
-    img: '/assets/footer/game.png',
-    imgActive: '/assets/footer/active/game.png',
+    img: '/images/footer/game.png',
+    imgActive: '/images/footer/active/game.png',
     path: '/game',
   },
   {
     info: '活动',
-    img: '/assets/footer/event.png',
-    imgActive: '/assets/footer/active/event.png',
+    img: '/images/footer/event.png',
+    imgActive: '/images/footer/active/event.png',
     path: '/event',
   },
   {
     info: '我的',
-    img: '/assets/footer/me.png',
-    imgActive: '/assets/footer/active/me.png',
+    img: '/images/footer/me.png',
+    imgActive: '/images/footer/active/me.png',
     path: '/dashboard',
   },
 ]);

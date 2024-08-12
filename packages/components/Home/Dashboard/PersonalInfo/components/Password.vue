@@ -7,7 +7,7 @@
       </div>
       <div class="backNav-container">
         <span>{{ info.nav == '支付密码' ? '未开启' : '未设置' }}</span>
-        <img src="/assets/navbar/backNav.png" alt="backNav" />
+        <img src="/images/navbar/backNav.png" alt="backNav" />
       </div>
     </div>
   </div>
@@ -18,12 +18,12 @@ import { reactive } from 'vue';
 const navbar = reactive([
   {
     nav: '支付密码',
-    img: 'src/assets/navbar/personal-info.png',
+    img: '/images/navbar/personal-info.png',
     path: '/personalInfo',
   },
   {
     nav: '账户密码',
-    img: 'src/assets/navbar/my-wallet.png',
+    img: '/images/navbar/my-wallet.png',
   },
 ]);
 </script>

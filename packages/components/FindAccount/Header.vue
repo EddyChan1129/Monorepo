@@ -1,7 +1,7 @@
 <template>
   <header>
     <h4>找回密码</h4>
-    <img src="/assets/findaccount/arrow.png" alt="arrow" @click="backprev" />
+    <img src="/images/findaccount/arrow.png" alt="arrow" @click="backprev" />
     <div class="processContainer">
       <slot></slot>
     </div>

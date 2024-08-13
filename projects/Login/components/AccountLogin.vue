@@ -39,7 +39,7 @@
       <RouterLink
         class="register-route"
         active-class="active"
-        to="/accountRegistrationView"
+        to="/register/accountRegister"
         >去注册</RouterLink
       >
     </div>

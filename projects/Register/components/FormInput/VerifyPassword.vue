@@ -1,6 +1,6 @@
 <template>
   <div class="form-input" :style="passwordErrors ? 'border:1px solid red' : ''">
-    <img src="/src/assets/input/password-logo.png" alt="password logo" />
+    <img src="/images/input/password-logo.png" alt="password logo" />
     <input
       :type="firstInput"
       placeholder="请设置账号密码"
@@ -26,7 +26,7 @@
       password != repassword && repassword != '' ? 'border:1px solid red' : ''
     "
   >
-    <img src="/src/assets/input/password-logo.png" />
+    <img src="/images/input/password-logo.png" />
     <input
       :type="secondInput"
       placeholder="请再次输入密码"
@@ -57,7 +57,7 @@ const emit = defineEmits([
 ]);
 const firstInput = ref('password');
 const secondInput = ref('password');
-const showpwdLogo = ref('/src/assets/input/hidePwd.png');
+const showpwdLogo = ref('/images/input/hidePwd.png');
 const passwordErrors = ref(false);
 
 const handlePasswordInput = (event: any) => {

@@ -1,14 +1,14 @@
 <template>
   <div class="main-container">
     <Header />
-    <LoginMethod />
+    <RegisterMethod />
     <RouterView />
   </div>
 </template>
 
 <script setup lang="ts">
 import Header from '@/components/Header.vue';
-import LoginMethod from '@/components/LoginMethod.vue';
+import RegisterMethod from '@/components/RegisterMethod.vue';
 import { RouterView } from 'vue-router';
 </script>
 

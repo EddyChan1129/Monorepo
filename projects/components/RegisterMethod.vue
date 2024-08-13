@@ -4,14 +4,14 @@
       <RouterLink
         class="select-account"
         active-class="active"
-        to="/accountRegistrationView"
+        to="/register/accountRegister"
       >
         账号注册
       </RouterLink>
       <RouterLink
         class="select-phone"
         active-class="active"
-        to="/phoneRegistrationView"
+        to="/register/phoneRegister"
         >手机号注册</RouterLink
       >
     </div>

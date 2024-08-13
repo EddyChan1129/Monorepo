@@ -29,7 +29,7 @@
       <RouterLink
         class="register-route"
         active-class="active"
-        to="/phoneRegistrationView"
+        to="/register/phoneRegister"
         >去注册</RouterLink
       >
     </div>

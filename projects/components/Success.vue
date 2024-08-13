@@ -13,7 +13,6 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import { defineProps } from 'vue';
 defineProps(['title', 'actions']);
 </script>
 

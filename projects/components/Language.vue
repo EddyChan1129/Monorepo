@@ -42,13 +42,13 @@ const toggleLanguage = () => {
 const selectLang = (lang: string) => {
   language.value = lang;
   if (lang === '简体中文') {
-    image.value = '/assets/language/zn.png';
+    image.value = '/images/language/zn.png';
     languageStore.language = '简体中文';
   } else if (lang === 'English') {
-    image.value = '/assets/language/en.png';
+    image.value = '/images/language/en.png';
     languageStore.language = 'English';
   } else {
-    image.value = '/assets/language/cn.png';
+    image.value = '/images/language/cn.png';
     languageStore.language = '繁體中文';
   }
 };

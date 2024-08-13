@@ -35,7 +35,7 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox']:checked {
-  background-image: url('@/assets/language/tick.png');
+  background-image: url('/images/language/tick.png');
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid $ActiveColor;

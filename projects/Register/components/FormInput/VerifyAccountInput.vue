@@ -4,7 +4,7 @@
       class="form-input"
       :style="accountErrors ? 'border: 1px solid red' : ''"
     >
-      <img src="/src/assets/input/account-logo.png" />
+      <img src="/images/input/account-logo.png" />
       <input
         type="text"
         :placeholder="placeholder"

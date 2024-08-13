@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import Success from '../components/Success.vue';
+import Success from '@/components/Success.vue';
 import useOverlay from './useOverlay';
 import type { Router } from 'vue-router';
 
@@ -9,7 +9,7 @@ export default () => {
   const displaySuccess = (
     router: Router,
     title: string = '注册成功',
-    actions: string = '前住登錄頁面',
+    actions: string = '前往登录页面',
     goTo: string = '/'
   ) => {
     // Create a new Vue instance for the Success component
@@ -28,22 +28,21 @@ export default () => {
     // Mount the Vue instance to the div
     const vm = app.mount(toast);
 
-    // Listen for the unmount event
-    // Since we cannot use `$watch` or `$on`, use an event emitter or manage it through the component's lifecycle
-    toast.addEventListener('click', () => {
-      app.unmount();
-      document.body.removeChild(toast);
+    // Define a function to safely remove the toast
+    const removeToast = () => {
+      if (toast.parentNode) {
+        app.unmount();
+        document.body.removeChild(toast);
+      }
       ToggleOverlay();
       router.push(goTo);
-    });
+    };
+
+    // Listen for the unmount event
+    toast.addEventListener('click', removeToast);
 
     // Alternatively, unmount after a delay
-    setTimeout(() => {
-      app.unmount();
-      document.body.removeChild(toast);
-      ToggleOverlay();
-      router.push(goTo);
-    }, 3000); // Adjust the delay as needed
+    setTimeout(removeToast, 3000); // Adjust the delay as needed
   };
 
   return {

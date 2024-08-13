@@ -6,7 +6,7 @@
     <div class="status-right">
       <div v-if="beforeLogin && !isLogin" class="login-before">
         <span @click="switchTryMode">试玩体验 ></span>
-        <RouterLink to="/phoneLoginView" class="status-logo"
+        <RouterLink to="/login/phoneLogin" class="status-logo"
           >注册/登录</RouterLink
         >
       </div>

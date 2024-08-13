@@ -77,6 +77,21 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('%/Dashboard/index.vue'),
+    },
+    {
+      path: '/personalInfo',
+      name: 'personalInfo',
+      component: () => import('%/PersonalInfo/index.vue'),
+    },
+    {
+      path: '/PersonalIdentity',
+      name: 'PersonalIdentity',
+      component: () => import('%/PersonalIdentity/index.vue'),
+    },
   ],
 });
 

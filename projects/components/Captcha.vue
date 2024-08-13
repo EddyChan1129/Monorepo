@@ -135,10 +135,6 @@ watch(
     }
   }
 );
-
-function alert(arg0: string) {
-  throw new Error('Function not implemented.');
-}
 </script>
 
 <style scoped lang="scss">

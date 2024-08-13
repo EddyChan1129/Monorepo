@@ -40,8 +40,8 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import Captcha from '@/components/Captcha.vue';
-import SimpleInput from '@/Login/components/FormInput/SimpleInput.vue';
-import PhoneInput from '@/Login/components/FormInput/PhoneInput.vue';
+import SimpleInput from '@/components/FormInput/SimpleInput.vue';
+import PhoneInput from '@/components/FormInput/PhoneInput.vue';
 const dialogVisible = ref(false);
 const phoneNum = ref('');
 const inviteCode = ref('');

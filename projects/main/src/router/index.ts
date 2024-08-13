@@ -45,6 +45,38 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/findAccount',
+      name: 'findAccount',
+      component: () => import('@/FindAccount/index.vue'),
+      children: [
+        {
+          path: '/findAccount',
+          name: 'findAccount',
+          component: () => import('@/FindAccount/index.vue'),
+          children: [
+            {
+              path: '',
+              name: 'findAccount',
+              component: () =>
+                import('@/FindAccount/components/verifyAccount.vue'),
+            },
+            {
+              path: '/verifyPhone',
+              name: 'verifyPhone',
+              component: () =>
+                import('@/FindAccount/components/verifyPhone.vue'),
+            },
+            {
+              path: '/resetPassword',
+              name: 'resetPassword',
+              component: () =>
+                import('@/FindAccount/components/resetPassword.vue'),
+            },
+          ],
+        },
+      ],
+    },
   ],
 });
 

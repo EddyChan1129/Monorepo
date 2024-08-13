@@ -34,7 +34,7 @@ const props = defineProps(['modelValue', 'placeholder', 'required', 'logo']);
 const emit = defineEmits(['update:modelValue', 'isPasswordError']);
 const inputType = ref('password');
 
-const showpwdLogo = ref('/src/assets/input/hidePwd.png');
+const showpwdLogo = ref('/images/input/hidePwd.png');
 const passwordErrors = ref(false);
 const isFocus = ref(false);
 const incorrectInputBorder = '1px solid red';

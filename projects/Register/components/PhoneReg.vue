@@ -43,9 +43,9 @@
 import { ref } from 'vue';
 import AcceptAgreement from '@/components/AcceptAgreement.vue';
 import Captcha from '@/components/Captcha.vue';
-import PhoneInput from '@/Register/components/FormInput/PhoneInput.vue';
-import VerifyCodeInput from '@/Register/components/FormInput/VerifyCodeInput.vue';
-import SimpleInput from '@/Register/components/FormInput/SimpleInput.vue';
+import PhoneInput from '@/components/FormInput/PhoneInput.vue';
+import VerifyCodeInput from '@/components/FormInput/VerifyCodeInput.vue';
+import SimpleInput from '@/components/FormInput/SimpleInput.vue';
 import useOverlay from '@/utils/useOverlay';
 
 const { ToggleOverlay } = useOverlay();

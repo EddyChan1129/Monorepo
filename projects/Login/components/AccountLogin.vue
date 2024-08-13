@@ -50,8 +50,8 @@
 import { ref } from 'vue';
 import Checkbox from '@/components/Checkbox.vue';
 import Captcha from '@/components/Captcha.vue';
-import PasswordInput from './FormInput/VerifyPwdInput.vue';
-import SimpleInput from './FormInput/SimpleInput.vue';
+import PasswordInput from '@/components/FormInput/VerifyPwdInput.vue';
+import SimpleInput from '@/components/FormInput/SimpleInput.vue';
 
 const account = ref('');
 const dialogVisible = ref(false);

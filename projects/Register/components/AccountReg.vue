@@ -44,9 +44,9 @@
 import { computed, ref } from 'vue';
 import AcceptAgreement from '@/components/AcceptAgreement.vue';
 import Captcha from '@/components/Captcha.vue';
-import VerifyAccountInput from '@/Register/components/FormInput/VerifyAccountInput.vue';
-import VerifyPassword from '@/Register/components/FormInput/VerifyPassword.vue';
-import SimpleInput from '@/Register/components/FormInput/SimpleInput.vue';
+import VerifyAccountInput from '@/components/FormInput/VerifyAccountInput.vue';
+import VerifyPassword from '@/components/FormInput/VerifyPassword.vue';
+import SimpleInput from '@/components/FormInput/SimpleInput.vue';
 
 const account = ref('');
 const password = ref('');

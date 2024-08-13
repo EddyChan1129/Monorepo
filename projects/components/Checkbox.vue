@@ -1,10 +1,5 @@
 <template>
-  <input
-    type="checkbox"
-    :checked="modelValue"
-    @click="toggleChecked"
-    required
-  />
+  <input type="checkbox" :checked="modelValue" @click="toggleChecked" />
 </template>
 
 <script setup lang="ts">

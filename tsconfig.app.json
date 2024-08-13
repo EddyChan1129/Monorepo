@@ -4,21 +4,7 @@
     "env.d.ts",
     "packages/src/**/*",
     "packages/src/**/*.vue",
-    "packages/src/**/**/*.vue",
-    "packages/components/**/*",
-    "packages/components/**/*.vue",
-    "packages/components/**/**/*.vue",
-    "packages/components/**/**/*.ts",
-    "packages/store/**/*",
-    "packages/store/**/*.ts",
-    "packages/store/**/*.vue",
-    "packages/store/**/**/*.ts",
-    "packages/store/**/**/*.vue",
-    "packages/hook/**/*",
-    "packages/hook/**/*.ts",
-    "packages/hook/**/*.vue",
-    "packages/hook/**/**/*.ts",
-    "packages/hook/**/**/*.vue"
+    "packages/src/**/**/*.vue"
   ],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {

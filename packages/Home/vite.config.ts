@@ -32,7 +32,7 @@ export default defineConfig(({ mode, command }) => {
     plugins: [vue(), VueSetup()],
     resolve: {
       alias: {
-        '%': resolve(__dirname, './src'),
+        '%': resolve('C:/Users/DELL/Desktop/Monorepo/projects', './'),
         '@': resolve('C:/Users/DELL/Desktop/Monorepo/packages', './'),
       },
     },

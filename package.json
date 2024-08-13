@@ -8,8 +8,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "main": "vite packages/eddy-repo",
-    "new": "vite packages/new"
+    "main": "vite projects/main"
   },
   "dependencies": {
     "crypto-js": "^4.2.0",

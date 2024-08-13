@@ -55,7 +55,6 @@ const inviteCode = ref('');
 const verifyCode = ref('');
 
 const register = async () => {
-  ToggleOverlay();
   dialogVisible.value = true;
 };
 

@@ -40,9 +40,6 @@ export default () => {
 
     // Listen for the unmount event
     toast.addEventListener('click', removeToast);
-
-    // Alternatively, unmount after a delay
-    setTimeout(removeToast, 3000); // Adjust the delay as needed
   };
 
   return {

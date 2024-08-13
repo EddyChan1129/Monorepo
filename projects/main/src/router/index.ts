@@ -1,7 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '%/Home/index.vue';
-import Login from '@/Login/index.vue';
-import Register from '@/Register/index.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
 
@@ -9,12 +6,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: HomeView,
+      component: () => import('%/Home/index.vue'),
     },
     {
       path: '/login',
       name: 'login',
-      component: Login,
+      component: () => import('@/Login/index.vue'),
       children: [
         {
           path: 'accountLogin',
@@ -31,7 +28,7 @@ const router = createRouter({
     {
       path: '/register',
       name: 'register',
-      component: Register,
+      component: () => import('@/Register/index.vue'),
       children: [
         {
           path: 'accountRegister',
@@ -51,29 +48,19 @@ const router = createRouter({
       component: () => import('@/FindAccount/index.vue'),
       children: [
         {
-          path: '/findAccount',
-          name: 'findAccount',
-          component: () => import('@/FindAccount/index.vue'),
-          children: [
-            {
-              path: '',
-              name: 'findAccount',
-              component: () =>
-                import('@/FindAccount/components/verifyAccount.vue'),
-            },
-            {
-              path: '/verifyPhone',
-              name: 'verifyPhone',
-              component: () =>
-                import('@/FindAccount/components/verifyPhone.vue'),
-            },
-            {
-              path: '/resetPassword',
-              name: 'resetPassword',
-              component: () =>
-                import('@/FindAccount/components/resetPassword.vue'),
-            },
-          ],
+          path: '',
+          name: 'verifyAccount',
+          component: () => import('@/FindAccount/components/verifyAccount.vue'),
+        },
+        {
+          path: '/verifyPhone',
+          name: 'verifyPhone',
+          component: () => import('@/FindAccount/components/verifyPhone.vue'),
+        },
+        {
+          path: '/resetPassword',
+          name: 'resetPassword',
+          component: () => import('@/FindAccount/components/resetPassword.vue'),
         },
       ],
     },

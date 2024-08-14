@@ -2,23 +2,21 @@
   <Header>身份绑定</Header>
   <div id="identity">
     <div>
-      <h3>基本信息</h3>
+      <h4>真实姓名</h4>
       <div class="form-input">
-        <input type="text" placeholder="请填写真实姓名" v-model="name" />
+        <input type="text" :value="name" />
       </div>
-      <p class="notice">*平台只会转账到该姓名下的银行卡，否则充值无法到账</p>
-      <div class="form-input select-sex" @click="isSelect = !isSelect">
-        <input type="text" placeholder="请选择性别" v-model="sex" />
-        <img src="/images/input/polygonDown-logo.png" />
-        <div class="selectPopup" v-show="isSelect">
-          <p @click="sex = '男'">男</p>
-          <p @click="sex = '女'">女</p>
-        </div>
-      </div>
+      <h4>性别</h4>
 
       <div class="form-input">
-        <input type="text" :placeholder="'注册于' + dateTime" />
+        <input type="text" :value="sex" />
       </div>
+      <h4>账号注册日</h4>
+
+      <div class="form-input">
+        <input type="text" :value="dateTime" />
+      </div>
+      <h4>出生日期</h4>
 
       <div class="form-input">
         <input
@@ -62,48 +60,23 @@
       </div>
     </div>
 
-    <SummitBtn :isok="isok" @click="handleSubmit">确认修改</SummitBtn>
+    <SummitBtn :isok="isok">确认修改</SummitBtn>
   </div>
 </template>
-<script setup lang="ts" name="index">
+<script setup lang="ts" name="comfirmIdentity">
 import Header from '%/components/Header.vue';
 import SummitBtn from '%/components/SummitBtn.vue';
 import { ref, onMounted, nextTick, computed, watch } from 'vue';
-import { useRouter } from 'vue-router';
 
-const route = useRouter();
-const formatDate = (date: Date) => {
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const hour = date.getHours();
-  const minute = date.getMinutes();
-  const second = date.getSeconds();
-  return `${year}年${month}月${day}日 ${hour}：${minute}：${second}`;
-};
-const handleSubmit = () => {
-  if (!isok.value) {
-    alert('请填写完整信息');
-    return;
-  }
-  // rounte push /comfirmIdentity and send parms to it
-  console.log('submit');
-  route.push({
-    name: 'comfirmIdentity',
-    query: {
-      name: name.value,
-      sex: sex.value,
-      dateTime: dateTime.value,
-      birth: `${selectedYear.value}-${selectedMonth.value}-${selectedDay.value}`,
-    },
-  });
-};
-const name = ref('');
-const sex = ref('');
-const dateTime = ref(formatDate(new Date()));
-const isSelect = ref(false);
+const props = defineProps({
+  name: String,
+  sex: String,
+  birth: String,
+  dateTime: String,
+});
+
 const showDatePicker = ref(false);
-const isok = ref(false);
+const isok = ref(true);
 
 const selectedYear = ref('');
 const selectedMonth = ref('');
@@ -112,7 +85,7 @@ const selectedDay = ref('');
 const formatedDate = computed(() => {
   // format should be like "01日01月2021年"
   if (!selectedYear.value || !selectedMonth.value || !selectedDay.value) {
-    return '';
+    return props.birth;
   }
   const day = String(selectedDay.value).padStart(2, '0');
   const month = String(selectedMonth.value).padStart(2, '0');
@@ -184,18 +157,6 @@ const onScroll = (type: 'year' | 'month' | 'day') => {
     }
   }
 };
-
-// if all input filled isok = true
-watch([name, sex, selectedYear, selectedMonth, selectedDay], () => {
-  isok.value =
-    name.value &&
-    sex.value &&
-    selectedYear.value &&
-    selectedMonth.value &&
-    selectedDay.value
-      ? true
-      : false;
-});
 
 onMounted(() => {
   const currentYear = new Date().getFullYear();

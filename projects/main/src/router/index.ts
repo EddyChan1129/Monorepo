@@ -80,6 +80,14 @@ const router = createRouter({
       component: () => import('%/PersonalIdentity/index.vue'),
     },
     {
+      path: '/comfirmIdentity',
+      name: 'comfirmIdentity',
+      component: () => import('%/PersonalIdentity/comfirmIdentity.vue'),
+      props(route) {
+        return route.query;
+      },
+    },
+    {
       path: '/my-wallet',
       name: 'my-wallet',
       component: () => import('%/MyWallet/index.vue'),

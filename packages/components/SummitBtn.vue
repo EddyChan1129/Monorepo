@@ -3,8 +3,6 @@
 </template>
 
 <script setup lang="ts" name="SummitBtn">
-import { defineProps } from 'vue';
-
 const props = defineProps<{
   isok: boolean;
 }>();

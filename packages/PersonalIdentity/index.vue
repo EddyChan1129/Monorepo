@@ -23,8 +23,8 @@
       <div class="form-input">
         <input
           type="text"
+          :value="formatedDate"
           placeholder="请选择出生日期"
-          v-model="birth"
           @click="selectBirth"
         />
         <img src="/images/input/polygonDown-logo.png" />
@@ -68,7 +68,7 @@
 <script setup lang="ts" name="index">
 import Header from '%/components/Header.vue';
 import SummitBtn from '%/components/SummitBtn.vue';
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, onMounted, nextTick, computed } from 'vue';
 
 const test = (day: string) => {
   console.log(day);
@@ -93,6 +93,16 @@ const showDatePicker = ref(false);
 const selectedYear = ref('');
 const selectedMonth = ref('');
 const selectedDay = ref('');
+
+const formatedDate = computed(() => {
+  // format should be like "01日01月2021年"
+  if (!selectedYear.value || !selectedMonth.value || !selectedDay.value) {
+    return '';
+  }
+  const day = String(selectedDay.value).padStart(2, '0');
+  const month = String(selectedMonth.value).padStart(2, '0');
+  return `${day}日${month}月${selectedYear.value}年`;
+});
 
 const years = ref<number[]>([]);
 const months = ref<number[]>(Array.from({ length: 12 }, (_, i) => i + 1));

@@ -62,17 +62,14 @@
       </div>
     </div>
 
-    <SummitBtn>确认修改</SummitBtn>
+    <SummitBtn :isok="isok" @click="handleSubmit">确认修改</SummitBtn>
   </div>
 </template>
 <script setup lang="ts" name="index">
 import Header from '%/components/Header.vue';
 import SummitBtn from '%/components/SummitBtn.vue';
-import { ref, onMounted, nextTick, computed } from 'vue';
+import { ref, onMounted, nextTick, computed, watch } from 'vue';
 
-const test = (day: string) => {
-  console.log(day);
-};
 const formatDate = (date: Date) => {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
@@ -82,13 +79,19 @@ const formatDate = (date: Date) => {
   const second = date.getSeconds();
   return `${year}年${month}月${day}日 ${hour}：${minute}：${second}`;
 };
-
+const handleSubmit = () => {
+  if (!isok.value) {
+    alert('请填写完整信息');
+    return;
+  }
+  alert('test');
+};
 const name = ref('');
 const sex = ref('');
-const birth = ref('');
 const dateTime = ref(formatDate(new Date()));
 const isSelect = ref(false);
 const showDatePicker = ref(false);
+const isok = ref(false);
 
 const selectedYear = ref('');
 const selectedMonth = ref('');
@@ -169,6 +172,18 @@ const onScroll = (type: 'year' | 'month' | 'day') => {
     }
   }
 };
+
+// if all input filled isok = true
+watch([name, sex, selectedYear, selectedMonth, selectedDay], () => {
+  isok.value =
+    name.value &&
+    sex.value &&
+    selectedYear.value &&
+    selectedMonth.value &&
+    selectedDay.value
+      ? true
+      : false;
+});
 
 onMounted(() => {
   const currentYear = new Date().getFullYear();

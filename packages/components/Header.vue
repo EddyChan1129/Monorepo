@@ -1,9 +1,11 @@
 <template>
   <header>
-    <h4>
-      <slot>Default</slot>
-    </h4>
     <img src="/images/findaccount/arrow.png" alt="arrow" @click="backprev" />
+
+    <p>
+      <slot>Default</slot>
+    </p>
+    <div></div>
   </header>
 </template>
 <script setup lang="ts" name="Header">
@@ -22,14 +24,16 @@ header {
   background: rgba(255, 255, 255, 1);
   padding: 5%;
   position: relative;
-  h4 {
-    text-align: center;
-  }
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  p {
+    color: rgba(37, 43, 52, 1);
+  }
   img {
-    position: absolute;
-    top: 40%;
-    left: 5%;
+    height: 1rem;
   }
 }
 </style>

@@ -79,6 +79,11 @@ const router = createRouter({
       name: 'PersonalIdentity',
       component: () => import('%/PersonalIdentity/index.vue'),
     },
+    {
+      path: '/my-wallet',
+      name: 'my-wallet',
+      component: () => import('%/MyWallet/index.vue'),
+    },
   ],
 });
 

@@ -1,0 +1,261 @@
+C:\USERS\DELL\DESKTOP\MONOREPO
+│  .env
+│  .gitignore
+│  Duty.json
+│  env.d.ts
+│  package.json
+│  pnpm-lock.yaml
+│  pnpm-workspace.yaml
+│  test.txt
+│  tsconfig.app.json
+│  tsconfig.json
+│  tsconfig.node.json
+├─packages
+│  ├─components
+│  │      Footer.vue
+│  │      Header.vue
+│  │      SummitBtn.vue
+│  │      
+│  ├─Dashboard
+│  │  │  index.vue
+│  │  │  
+│  │  └─components
+│  │          DownloadApp.vue
+│  │          HelpCenter.vue
+│  │          UserStatus.vue
+│  │          Wallet.vue
+│  │          
+│  ├─Home
+│  │  │  index.vue
+│  │  │  
+│  │  └─components
+│  │          Footer.vue
+│  │          GameContent.vue
+│  │          language.vue
+│  │          Status.vue
+│  │          
+│  ├─MyWallet
+│  │      index.vue
+│  │      
+│  ├─PersonalIdentity
+│  │      comfirmIdentity.vue
+│  │      index.vue
+│  │      
+│  └─PersonalInfo
+│      │  index.vue
+│      │  
+│      └─components
+│              AccountSafety.vue
+│              Header.vue
+│              Identity.vue
+│              Password.vue
+│              
+└─projects
+    ├─assets
+    │  └─styles
+    │          container.scss
+    │          formStyle.scss
+    │          main.scss
+    │          navbar.scss
+    │          PingFangSC.woff
+    │          PingFangSC.woff2
+    │          Rajdhani-Bold.woff
+    │          Rajdhani-Bold.woff2
+    │          stylesheet.css
+    │          variable.scss
+    │          
+    ├─components
+    │  │  AcceptAgreement.vue
+    │  │  Captcha.vue
+    │  │  Checkbox.vue
+    │  │  Header.vue
+    │  │  Language.vue
+    │  │  LoginMethod.vue
+    │  │  RegFooter.vue
+    │  │  RegisterMethod.vue
+    │  │  Success.vue
+    │  │  
+    │  └─FormInput
+    │          PhoneInput.vue
+    │          SimpleInput.vue
+    │          VerifyAccountInput.vue
+    │          VerifyCodeInput.vue
+    │          VerifyPassword.vue
+    │          VerifyPwdInput.vue
+    │          
+    ├─FindAccount
+    │  │  index.vue
+    │  │  
+    │  └─components
+    │          Header.vue
+    │          ResetPassword.vue
+    │          verifyAccount.vue
+    │          verifyPhone.vue
+    │          
+    ├─Login
+    │  │  index.vue
+    │  │  
+    │  └─components
+    │          AccountLogin.vue
+    │          PhoneLogin.vue
+    │          
+    ├─main
+    │  │  .env
+    │  │  .gitignore
+    │  │  index.html
+    │  │  package.json
+    │  │  vite.config.ts
+    │  │  
+    │  │  └─.vite
+    │  │      └─deps
+    │  │              chunk-VS745C3H.js
+    │  │              chunk-VS745C3H.js.map
+    │  │              chunk-VSLRAGRS.js
+    │  │              chunk-VSLRAGRS.js.map
+    │  │              chunk-VUNV25KB.js
+    │  │              chunk-VUNV25KB.js.map
+    │  │              crypto-js.js
+    │  │              crypto-js.js.map
+    │  │              package.json
+    │  │              pinia.js
+    │  │              pinia.js.map
+    │  │              vue-router.js
+    │  │              vue-router.js.map
+    │  │              vue.js
+    │  │              vue.js.map
+    │  │              _metadata.json
+    │  │              
+    │  ├─public
+    │  │  │  favicon.ico
+    │  │  │  
+    │  │  └─images
+    │  │      ├─findaccount
+    │  │      │      account-logo.png
+    │  │      │      arrow.png
+    │  │      │      hidePwd.png
+    │  │      │      password-logo.png
+    │  │      │      showpassword.png
+    │  │      │      
+    │  │      ├─footer
+    │  │      │  │  event.png
+    │  │      │  │  game.png
+    │  │      │  │  home.png
+    │  │      │  │  lucky.png
+    │  │      │  │  me.png
+    │  │      │  │  
+    │  │      │  └─active
+    │  │      │          event.png
+    │  │      │          game.png
+    │  │      │          home.png
+    │  │      │          lucky.png
+    │  │      │          me.png
+    │  │      │          
+    │  │      ├─home
+    │  │      │  │  cartoon.png
+    │  │      │  │  helpCenter.png
+    │  │      │  │  money.png
+    │  │      │  │  opbg-1.png
+    │  │      │  │  remove.png
+    │  │      │  │  safety.png
+    │  │      │  │  speaker.svg
+    │  │      │  │  user-logo.png
+    │  │      │  │  wallet.png
+    │  │      │  │  
+    │  │      │  ├─game
+    │  │      │  │      gameTopContent.svg
+    │  │      │  │      gameTrack-1.svg
+    │  │      │  │      gameTrack-2.svg
+    │  │      │  │      start.svg
+    │  │      │  │      track.svg
+    │  │      │  │      track1.svg
+    │  │      │  │      
+    │  │      │  ├─index
+    │  │      │  │      home-logo.svg
+    │  │      │  │      money.svg
+    │  │      │  │      status-login.svg
+    │  │      │  │      status-try.svg
+    │  │      │  │      
+    │  │      │  └─rectangle
+    │  │      │          rec1.svg
+    │  │      │          rec2.svg
+    │  │      │          rec3.svg
+    │  │      │          rec4.svg
+    │  │      │          rec5.svg
+    │  │      │          rec6.svg
+    │  │      │          
+    │  │      ├─input
+    │  │      │      account-logo.png
+    │  │      │      hidePwd.png
+    │  │      │      invite-logo.png
+    │  │      │      password-logo.png
+    │  │      │      phone-logo.png
+    │  │      │      polygonDown-logo.png
+    │  │      │      polygonUp-logo.png
+    │  │      │      showpassword.png
+    │  │      │      validate-logo.png
+    │  │      │      
+    │  │      ├─language
+    │  │      │      cn.png
+    │  │      │      en.png
+    │  │      │      tick.png
+    │  │      │      zn.png
+    │  │      │      
+    │  │      ├─navbar
+    │  │      │      backNav.png
+    │  │      │      download.png
+    │  │      │      helpcenter.png
+    │  │      │      infocenter.png
+    │  │      │      invest-detail.png
+    │  │      │      invest-record.png
+    │  │      │      my-assest.png
+    │  │      │      my-wallet.png
+    │  │      │      people.png
+    │  │      │      personal-info.png
+    │  │      │      promotion.png
+    │  │      │      query.png
+    │  │      │      suggestion.png
+    │  │      │      
+    │  │      ├─styles
+    │  │      │      container.scss
+    │  │      │      formStyle.scss
+    │  │      │      main.scss
+    │  │      │      navbar.scss
+    │  │      │      PingFangSC.woff
+    │  │      │      PingFangSC.woff2
+    │  │      │      Rajdhani-Bold.woff
+    │  │      │      Rajdhani-Bold.woff2
+    │  │      │      stylesheet.css
+    │  │      │      variable.scss
+    │  │      │      
+    │  │      ├─success
+    │  │      │      success.png
+    │  │      │      
+    │  │      └─welcome
+    │  │              klogo.png
+    │  │              logo.png
+    │  │              logo2.png
+    │  │              
+    │  └─src
+    │      │  App.vue
+    │      │  main.ts
+    │      │  
+    │      └─router
+    │              index.ts
+    │              
+    ├─Register
+    │  │  index.vue
+    │  │  
+    │  └─components
+    │          AccountReg.vue
+    │          PhoneReg.vue
+    │          
+    ├─store
+    │      account.ts
+    │      language.ts
+    │      overlay.ts
+    │      
+    └─utils
+            useLogin.ts
+            useOverlay.ts
+            useRegister.ts
+            useSuccess.ts

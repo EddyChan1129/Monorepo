@@ -25,7 +25,22 @@
       v-for="(track, index) in trackStore.trackList"
       :key="index"
     >
-      <div v-if="track.isRepair" class="repair">正在维修中</div>
+      <div v-if="track.isRepair" class="repair">
+        <div class="left">
+          <img src="/images/home/game2/repairRec/l1.png" alt="l1" />
+          <img src="/images/home/game2/repairRec/l2.png" alt="l2" />
+          <img src="/images/home/game2/repairRec/l3.png" alt="l3" />
+          <img src="/images/home/game2/repairRec/l4.png" alt="l4" />
+        </div>
+        <div>正在维修中</div>
+
+        <div class="right">
+          <img src="/images/home/game2/repairRec/r1.png" alt="r1" />
+          <img src="/images/home/game2/repairRec/r2.png" alt="r2" />
+          <img src="/images/home/game2/repairRec/r3.png" alt="r3" />
+          <img src="/images/home/game2/repairRec/r4.png" alt="r4" />
+        </div>
+      </div>
       <img :src="track.img" alt="" />
       <div class="game-right">
         <img :src="track.miniTrack" alt="" />
@@ -261,18 +276,34 @@ const trackStore = useTrackStore();
       position: absolute;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       font-size: 1.5em;
       font-weight: bold;
       letter-spacing: 0.1rem;
       top: 50%;
       width: 100%;
-      height: 2rem;
+      height: 1.8rem;
       background: rgba(255, 255, 255, 0.8);
       background-image: url('/images/home/game2/repairbg.png');
       z-index: 1;
       color: rgba(37, 43, 52, 1);
       text-align: center;
+
+      .left {
+        display: flex;
+        img {
+          height: 1.8rem;
+          opacity: 0.1;
+        }
+      }
+
+      .right {
+        display: flex;
+        img {
+          height: 1.8rem;
+          opacity: 0.1;
+        }
+      }
     }
 
     .game-right {

@@ -25,6 +25,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'D-DIN';
+  src: url('D-DIN.woff2') format('woff2'), url('D-DIN.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Color */
 $ActiveColor: rgba(10, 92, 255, 1);
 $RegisterBg: linear-gradient(180deg, #f4f9fe 0%, #ffffff 100%);

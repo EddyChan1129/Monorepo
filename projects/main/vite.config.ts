@@ -3,8 +3,12 @@ import vue from '@vitejs/plugin-vue';
 import VueSetup from 'vite-plugin-vue-setup-extend';
 // import { VITE_API_URL } from '@/utils/config.ts';
 
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
 import process from 'process';
+const __projects = dirname(__dirname);
+const __package = resolve(__projects, '../packages');
+
+console.log('__projects', __projects, __package);
 
 export default defineConfig(({ mode, command }) => {
   const env: Record<string, string> = loadEnv(mode, process.cwd());
@@ -32,8 +36,8 @@ export default defineConfig(({ mode, command }) => {
     plugins: [vue(), VueSetup()],
     resolve: {
       alias: {
-        '@': resolve('C:/Users/DELL/Desktop/Monorepo/projects', './'),
-        '%': resolve('C:/Users/DELL/Desktop/Monorepo/packages', './'),
+        '@': resolve(__projects, './'),
+        '%': resolve(__package, './'),
       },
     },
     // css: {

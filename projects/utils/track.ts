@@ -5,7 +5,7 @@ export const useTrackStore = defineStore('track', {
     return {
       trackList: [
         {
-          track: 'track1',
+          trackName: '賽道一',
           img: '/images/home/game2/track1.png',
           miniTrack: '/images/home/game2/mini-track1.png',
           detail: {
@@ -14,9 +14,10 @@ export const useTrackStore = defineStore('track', {
             lap: '1',
             marbles: '10',
           },
+          isRepair: false,
         },
         {
-          track: 'track2',
+          trackName: '賽道二',
           img: '/images/home/game2/track2.png',
           miniTrack: '/images/home/game2/mini-track2.png',
           detail: {
@@ -25,9 +26,10 @@ export const useTrackStore = defineStore('track', {
             lap: '2',
             marbles: '10',
           },
+          isRepair: false,
         },
         {
-          track: 'track3',
+          trackName: '賽道三',
           img: '/images/home/game2/track3.png',
           miniTrack: '/images/home/game2/mini-track3.png',
           detail: {
@@ -36,6 +38,7 @@ export const useTrackStore = defineStore('track', {
             lap: '3',
             marbles: '4',
           },
+          isRepair: true,
         },
       ],
     };

@@ -25,6 +25,7 @@
       v-for="(track, index) in trackStore.trackList"
       :key="index"
     >
+      <div v-if="track.isRepair" class="repair">正在维修中</div>
       <img :src="track.img" alt="" />
       <div class="game-right">
         <img :src="track.miniTrack" alt="" />
@@ -57,8 +58,8 @@
       </div>
       <div class="game-bottom">
         <div class="start-logo">
-          <img src="/images/home/game2/track-logo.png" alt="" />賽道
-          {{ index + 1 }}
+          <img src="/images/home/game2/track-logo.png" alt="" />
+          {{ track.trackName }}
         </div>
         <span class="ready">
           准备中
@@ -255,6 +256,24 @@ const trackStore = useTrackStore();
     font-size: 0.6em;
     border-radius: 5px;
     margin-bottom: 1rem;
+
+    .repair {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      top: 50%;
+      width: 100%;
+      height: 2rem;
+      background: rgba(255, 255, 255, 0.8);
+      background-image: url('/images/home/game2/repairbg.png');
+      z-index: 1;
+      color: rgba(37, 43, 52, 1);
+      text-align: center;
+    }
 
     .game-right {
       position: absolute;

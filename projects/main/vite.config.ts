@@ -8,7 +8,7 @@ import process from 'process';
 const __projects = dirname(__dirname);
 const __package = resolve(__projects, '../packages');
 
-console.log('__projects', __projects, __package);
+console.log('__projects', __projects, '\n__package', __package);
 
 export default defineConfig(({ mode, command }) => {
   const env: Record<string, string> = loadEnv(mode, process.cwd());

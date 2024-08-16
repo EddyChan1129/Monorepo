@@ -92,6 +92,11 @@ const router = createRouter({
       name: 'my-wallet',
       component: () => import('%/MyWallet/index.vue'),
     },
+    {
+      path: '/LuckysSpin',
+      name: 'LuckysSpin',
+      component: () => import('@/components/LuckysSpin.vue'),
+    },
   ],
 });
 

@@ -1,41 +1,23 @@
 <template>
-  <span> Prize number: {{ prizeNumber }}</span>
-  <button
-    type="button"
-    @click="!rolling && prizeNumber < 8 && prizeNumber++"
-    :disabled="rolling || prizeNumber === 8"
-  >
-    Add
-  </button>
-  <button
-    type="button"
-    @click="!rolling && prizeNumber > 2 && prizeNumber--"
-    :disabled="rolling || prizeNumber === 2"
-  >
-    Remove
-  </button>
-  <div class="wheel-wrapper">
-    <div class="wheel-pointer" @click="onClickRotate">Start</div>
-    <div
-      class="wheel-bg"
-      :class="{ freeze: freeze }"
-      :style="`transform: rotate(${wheelDeg}deg)`"
-    >
-      <div class="prize-list">
-        <div
-          class="prize-item-wrapper"
-          v-for="(item, index) in prizeList"
-          :key="index"
-        >
+  <div id="test">
+    <div class="wheel-wrapper">
+      <div class="wheel-pointer" @click="onClickRotate"></div>
+      <div class="wheel-bg" :style="`transform: rotate(${wheelDeg}deg)`">
+        <div class="prize-list">
           <div
-            class="prize-item"
-            :style="`transform: rotate(${(360 / prizeList.length) * index}deg)`"
+            class="prize-item-wrapper"
+            v-for="(item, index) in prizeList"
+            :key="index"
           >
-            <div class="prize-name">
-              {{ item.name }}
-            </div>
-            <div class="prize-icon">
-              <img :src="item.icon" />
+            <div
+              class="prize-item"
+              :style="`transform: rotate(${
+                (360 / prizeList.length) * index
+              }deg);background: ${item.background}`"
+            >
+              <div class="prize-name">
+                {{ item.name }}
+              </div>
             </div>
           </div>
         </div>
@@ -44,45 +26,32 @@
   </div>
 </template>
 <script setup lang="ts" name="LuckysSpin">
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, watch } from 'vue';
 
-const freeze = ref(false);
 const rolling = ref(false);
-const wheelDeg = ref(0);
-const prizeNumber = ref(8);
+const wheelDeg = ref(30);
+const prizeNumber = ref(5);
 
 const prizeListOrigin = ref([
   {
-    icon: 'https://picsum.photos/40?random=1',
-    name: '$10000',
+    name: '3元',
+    background: 'linear-gradient(112.62deg, #9CA0FF 55.46%, #0E4BED 80.89%)',
   },
   {
-    icon: 'https://picsum.photos/40?random=6',
-    name: 'Thank you!',
+    name: '1000元',
+    background: 'linear-gradient(146.51deg, #62BEFF 39.25%, #2B65FF 82.34%)',
   },
   {
-    icon: 'https://picsum.photos/40?random=2',
-    name: '$500',
+    name: '99元',
+    background: 'linear-gradient(240.7deg, #D2DEFF 9.67%, #F9FAFF 46.08%);',
   },
   {
-    icon: 'https://picsum.photos/40?random=3',
-    name: '$100',
+    name: '1元',
+    background: 'linear-gradient(123.68deg, #5684FF 54.37%, #1652ED 91.59%);',
   },
   {
-    icon: 'https://picsum.photos/40?random=6',
-    name: 'Thank you!',
-  },
-  {
-    icon: 'https://picsum.photos/40?random=4',
-    name: '$50',
-  },
-  {
-    icon: 'https://picsum.photos/40?random=5',
-    name: '$10',
-  },
-  {
-    icon: 'https://picsum.photos/40?random=6',
-    name: 'Thank you!',
+    name: '2元',
+    background: 'linear-gradient(240.7deg, #D2DEFF 9.67%, #F9FAFF 46.08%);',
   },
 ]);
 
@@ -109,102 +78,67 @@ const roll = (result) => {
   setTimeout(() => {
     rolling.value = false;
     alert('Result：' + prizeList.value[result].name);
-  }, 4500);
+  }, 2000);
 };
 
 watch(prizeNumber, () => {
-  freeze.value = true;
   wheelDeg.value = 0;
-
-  setTimeout(() => {
-    freeze.value = false;
-  }, 0);
-});
-
-onMounted(() => {
-  // Initialize the component if needed
 });
 </script>
 
 <style lang="scss" scoped>
-html {
-  background: #dd7c7d;
+#test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .wheel-wrapper {
   width: 300px;
   height: 300px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
 }
 
 .wheel-pointer {
-  width: 60px;
-  height: 60px;
-  border-radius: 1000px;
-  background: yellow;
+  width: 100px;
+  height: 100px;
+  background: url('/images/luckyspin/clickStart.png');
+  background-size: 100%;
   position: absolute;
-  left: 50%;
+  left: 48%;
   top: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  line-height: 60px;
-  z-index: 10;
+  z-index: 1;
   cursor: pointer;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    border-width: 0 8px 40px;
-    border-style: solid;
-    border-color: transparent transparent yellow;
-    transform: translateX(-50%);
-  }
 }
 .wheel-bg {
-  width: 100%;
   height: 100%;
-  border-radius: 1000px;
+  border-radius: 50%;
+  transition: transform 2s ease-in-out;
   overflow: hidden;
-  transition: transform 4s ease-in-out;
-  background: #7eef97;
-
-  &.freeze {
-    transition: none;
-    background: red;
-  }
 }
 
 .prize-list {
-  width: 100%;
-  height: 100%;
-  position: relative;
   text-align: center;
 }
 
 .prize-item-wrapper {
   position: absolute;
-  top: 0;
-  left: 50%;
+  left: 38.5%;
   transform: translateX(-50%);
-  width: 150px;
-  height: 150px;
+  width: 50%; // Responsive width
+  aspect-ratio: 1; // Keep a square shape
 }
 
 .prize-item {
-  width: 100%;
+  position: absolute;
+  width: 145%;
   height: 100%;
   transform-origin: bottom;
-
-  .prize-name {
-    padding: 16px 0;
-  }
-
-  .prize-icon {
-  }
+  clip-path: polygon(48% 100%, 0 0, 100% 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

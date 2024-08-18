@@ -2,5 +2,9 @@
   "name": "main",
   "version": "0.0.0",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@pg/Dashboard": "workspace:*",
+    "@package/Home": "workspace:*"
+  }
 }

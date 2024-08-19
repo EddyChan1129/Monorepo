@@ -4,7 +4,12 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@pg/Dashboard": "workspace:*",
-    "@package/Home": "workspace:*"
+    "@package/Dashboard": "workspace:*",
+    "@package/Home": "workspace:*",
+    "@project/Login": "workspace:*",
+    "@project/Register": "workspace:*",
+    "@project/FindAccount": "workspace:*",
+    "@package/PersonalInfo": "workspace:*",
+    "@package/PersonalIdentity": "workspace:*"
   }
 }

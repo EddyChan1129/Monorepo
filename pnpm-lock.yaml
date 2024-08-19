@@ -65,14 +65,39 @@ importers:
 
   packages/Home: {}
 
+  packages/PersonalIdentity: {}
+
+  packages/PersonalInfo: {}
+
+  projects/FindAccount: {}
+
+  projects/Login: {}
+
+  projects/Register: {}
+
   projects/main:
     dependencies:
+      '@package/Dashboard':
+        specifier: workspace:*
+        version: link:../../packages/Dashboard
       '@package/Home':
         specifier: workspace:*
         version: link:../../packages/Home
-      '@pg/Dashboard':
+      '@package/PersonalIdentity':
         specifier: workspace:*
-        version: link:../../packages/Dashboard
+        version: link:../../packages/PersonalIdentity
+      '@package/PersonalInfo':
+        specifier: workspace:*
+        version: link:../../packages/PersonalInfo
+      '@project/FindAccount':
+        specifier: workspace:*
+        version: link:../FindAccount
+      '@project/Login':
+        specifier: workspace:*
+        version: link:../Login
+      '@project/Register':
+        specifier: workspace:*
+        version: link:../Register
 
 packages:
 

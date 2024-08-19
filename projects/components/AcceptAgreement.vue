@@ -37,7 +37,7 @@
   </div>
 
   <div class="agreement">
-    <Checkbox />
+    <Checkbox @click="handleChecked" />
     <span>我已阅读并同意</span>
     <a class="agreement-link" @click="tooglePrivateStatement">
       《条款和隐私政策》
@@ -48,7 +48,15 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import Checkbox from '@/components/Checkbox.vue';
-import useOverlay from '@/utils/useOverlay';
+import useOverlay from '@/hooks/useOverlay';
+
+const props = defineProps(['modelValue']);
+
+const emit = defineEmits(['update:modelValue']);
+
+const handleChecked = () => {
+  emit('update:modelValue', !props.modelValue);
+};
 
 const open = ref(true);
 const { ToggleOverlay } = useOverlay();

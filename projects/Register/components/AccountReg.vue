@@ -28,7 +28,7 @@
         logo="/images/input/invite-logo.png"
       />
 
-      <AcceptAgreement />
+      <AcceptAgreement v-model="agree" />
       <button
         type="submit"
         class="register-button"
@@ -52,11 +52,13 @@ const account = ref('');
 const password = ref('');
 const repassword = ref('');
 const inviteCode = ref('');
+const agree = ref(false);
 
 const dialogVisible = ref(false);
 const accountError = ref(false);
 const passwordError = ref(false);
 
+// i check the checkbox checked
 const checkErrors = computed(
   () =>
     accountError.value ||
@@ -64,7 +66,8 @@ const checkErrors = computed(
     account.value === '' ||
     password.value === '' ||
     repassword.value === '' ||
-    inviteCode.value === ''
+    inviteCode.value === '' ||
+    !agree.value
 );
 
 const accountRegister = async () => {

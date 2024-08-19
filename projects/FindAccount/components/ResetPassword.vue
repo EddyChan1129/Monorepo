@@ -21,8 +21,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import VerifyPassword from '@/components/FormInput/VerifyPassword.vue';
-import useOverlay from '@/utils/useOverlay';
-import useSuccess from '@/utils/useSuccess';
+import useOverlay from '@/hooks/useOverlay';
+import useSuccess from '@/hooks/useSuccess';
 import Header from './Header.vue';
 import { useRouter } from 'vue-router';
 

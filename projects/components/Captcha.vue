@@ -10,11 +10,11 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import { useAccountStore } from '@/store/account';
-import useOverlay from '@/utils/useOverlay';
-import useLogin from '@/utils/useLogin';
-import useRegister from '@/utils/useRegister';
-import useSuccess from '@/utils/useSuccess';
+import { useAccountStore } from '@/utils/account';
+import useOverlay from '@/hooks/useOverlay';
+import useLogin from '@/hooks/useLogin';
+import useRegister from '@/hooks/useRegister';
+import useSuccess from '@/hooks/useSuccess';
 
 const { phoneLogin, accountLogin } = useLogin();
 const { phoneRegister, accountRegister } = useRegister();
@@ -42,9 +42,10 @@ const processPhoneLogin = async (data: any) => {
 
   if (suessPhoneLogin === 200) {
     accountStore.account = props.phoneNum as string;
-    displaySuccess(router, 'suessPhoneLogin', 'suessPhoneLogin');
+    displaySuccess(router, '登录成功', '去首页');
   } else {
     alert('登录失败');
+    ToggleOverlay();
   }
 };
 
@@ -56,9 +57,10 @@ const processPhoneRegister = async (data: any) => {
   emit('isDialogVisible', false);
 
   if (suessPhoneRegister === 200) {
-    displaySuccess(router, 'suessPhoneRegister', 'suessPhoneRegister');
+    displaySuccess(router, '注册成功', '前往登录', '/login/phoneLogin');
   } else {
     alert('注册失败');
+    ToggleOverlay();
   }
 };
 
@@ -73,9 +75,10 @@ const processAccountLogin = async (data: any) => {
 
   if (suessAccountLogin === 200) {
     accountStore.account = props.account as string;
-    displaySuccess(router, 'suessAccountLogin', 'suessAccountLogin');
+    displaySuccess(router, '登录成功', '去首页');
   } else {
     alert('登录失败');
+    ToggleOverlay();
   }
 };
 
@@ -89,9 +92,10 @@ const processAccountRegister = async (data: any) => {
   emit('isDialogVisible', false);
 
   if (suessAccountRegister === 200) {
-    displaySuccess(router, 'suessAccountRegister', 'suessAccountRegister');
+    displaySuccess(router, '注册成功', '前往登录', '/login/accountLogin');
   } else {
     alert('注册失败');
+    ToggleOverlay();
   }
 };
 

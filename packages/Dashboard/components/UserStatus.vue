@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 
-import { useAccountStore } from '@/store/account';
+import { useAccountStore } from '@/utils/account';
 
 const router = useRouter();
 

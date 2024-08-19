@@ -35,7 +35,7 @@
 import Language from './language.vue';
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import { useAccountStore } from '@/store/account';
+import { useAccountStore } from '@/utils/account';
 
 const accountStore = useAccountStore();
 

@@ -6,14 +6,14 @@
     <div class="success_content">{{ title }}</div>
     <hr />
     <div class="success_content">
-      <RouterLink to="/">{{ actions }}</RouterLink>
+      <RouterLink :to="goTo">{{ actions }}</RouterLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-defineProps(['title', 'actions']);
+defineProps(['title', 'actions', 'goTo']);
 </script>
 
 <style lang="scss" scoped></style>
